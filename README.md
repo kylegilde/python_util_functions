@@ -1,2 +1,2 @@
 # python_util_functions
-Usage for functions in script development
+Useful functions in script development
