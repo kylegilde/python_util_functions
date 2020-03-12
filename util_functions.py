@@ -15,9 +15,8 @@ def get_object_name(obj):
     
     """
     import inspect
-    namespace = inspect.stack()[1][0].f_globals
+    namespace = dict(globals(), **locals()) # inspect.stack()[1][0].f_globals
     return [name for name in namespace if namespace[name] is obj][0]
-
 
 def print_shape(x, return_shape=False):
     """
@@ -34,8 +33,6 @@ def print_shape(x, return_shape=False):
     Only returns the shape if return_shape=True
     
     """
-    assert hasattr(x, 'shape'), 'Object does not have shape attribute'
-    
     x_name = get_object_name(x)
     print(x_name, x.shape)
     
