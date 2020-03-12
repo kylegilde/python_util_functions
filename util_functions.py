@@ -14,7 +14,7 @@ def get_object_name(obj):
     a string
     
     """
-    import inspect
+    # import inspect
     namespace = dict(globals(), **locals()) # inspect.stack()[1][0].f_globals
     return [name for name in namespace if namespace[name] is obj][0]
 
